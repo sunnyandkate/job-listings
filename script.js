@@ -1,8 +1,4 @@
 
-
-
-
-
 let searchField = document.querySelector('#search-field');
 
 //assign a variable for all choose classes
@@ -24,8 +20,7 @@ document.querySelectorAll('.choose')[i].addEventListener('click',function(){
 	searchField.style.display = 'block';
 	searchField.classList.add('animate__animated', 'animate__fadeIn');
 	close.classList.add('animate__animated', 'animate__fadeIn');
-	
-	//searchField.textContent += this.textContent;
+		
 	close.style.display= 'block';
 	
 	
@@ -38,12 +33,12 @@ document.querySelectorAll('.choose')[i].addEventListener('click',function(){
 
 //chooseText has the value of text from choosen button
 	  const chooseText = this.textContent;
+	  
+	  
 //filter 
 	  filterChoose(chooseText);
 	  
-	  
-	  
-	  
+	    
 //select the item 	  
 let item = document.querySelectorAll('.item');		
 
@@ -60,14 +55,8 @@ document.querySelectorAll('.item')[j].addEventListener('click', function(){
 	
 		
 });
-
-
-
-
 }
-	
-
-	
+		
 });
 }
 
@@ -82,15 +71,31 @@ const filterChoose = (chooseText) => {
 	
 	.forEach((choosenSkill) => choosenSkill.classList.add('filtered'));
 		
-	// Array.from(skill.children)
-	// .filter((choosenSkill) => choosenSkill.textContent.includes(chooseText))
 	
-	// .forEach((choosenSkill) => choosenSkill.classList.remove('filtered'));
+	
+	let item = document.querySelectorAll('.item');		
+
+
+//loop through the items	
+	for(var j=0;j<item.length;j++){		
+			
 		
+//delete the item when clicked on it
+document.querySelectorAll('.item')[j].addEventListener('click', function(){
+	
+	//show the card again
+	Array.from(skill.children)
+	.filter((choosenSkill) => choosenSkill.textContent.includes(chooseText))
+	.forEach((choosenSkill) => choosenSkill.classList.remove('filtered'));
+	});}	
 
 
 };
 
+
+
+
+//***********************************//
 const card = document.querySelectorAll('.card');
 	
 //close the searchfield when click on clear
@@ -104,6 +109,7 @@ close.addEventListener('click', function(){
 	
 	}
 	
+	//remove choose buttons
 	while(searchField.firstChild){
 	
 	searchField.removeChild(searchField.firstChild);
