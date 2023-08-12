@@ -13,8 +13,7 @@ let close = document.querySelector('.close');
 		
 //show the searchfield 	
 		searchField.style.display = 'block';
-		searchField.classList.add('animate__animated', 'animate__fadeIn');
-		close.classList.add('animate__animated', 'animate__fadeIn');			
+				
 		close.style.display= 'block';
 			
 //create element div and pass in the value from the choose button	
